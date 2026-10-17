@@ -1,8 +1,10 @@
 @use "../abstracts/mixins" as *
 @use "../abstracts/variables" as *
 
-.highlight
+.highlight-blue
   color: $color-blue
+.highlight-pink
+  color: $color-carmine-pink
 .subtitle
   @include font(Rubik, 1.2rem, 400)
   line-height: 140%
@@ -10,5 +12,9 @@
   color: $color-mouse-grey
 .title-1
   @include font(Rubik, 4.4rem, 700)
+  color: $color-dark
+  line-height: 126%
+.title-2
+  @include font(Rubik, 4.2rem, 700)
   color: $color-dark
   line-height: 126%

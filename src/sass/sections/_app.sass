@@ -1,0 +1,38 @@
+@use "../abstracts/mixins" as *
+@use "../abstracts/variables" as *
+
+.section-app
+  padding: 8rem 0
+  z-index: 0
+  &__wrapper
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    align-items: center
+  &__image
+    width: 100%
+    padding: 5rem 0
+    position: relative
+  &__img
+    max-width: 25rem
+    justify-self: center
+  &__text
+    max-width: 38rem
+  &__decore
+    &_1
+      width: 14rem
+      height: 14rem
+      border-radius: 3rem
+      top: 0
+      left: 10rem
+    &_2
+      width: 7rem
+      height: 7rem
+      border-radius: 3rem
+      right: 13rem
+      bottom: 12rem
+    &_3
+      width: 7rem
+      height: 7rem
+      border-radius: 3rem
+      bottom: 5rem
+      left: 14rem
