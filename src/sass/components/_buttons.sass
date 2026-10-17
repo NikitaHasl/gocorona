@@ -1,0 +1,21 @@
+@use "../abstracts/mixins" as *
+@use "../abstracts/variables" as *
+
+.btn
+  @include font(Raleway, 1rem, 700)
+  color: $color-ghostly-white
+  line-height: 100%
+  letter-spacing: 14%
+  text-transform: uppercase
+  padding: 1.6rem 3.2rem
+  border-radius: .5rem
+  cursor: pointer
+  transition: box-shadow .35s
+  &_blue
+    background-color: $color-blue
+    &:hover
+      box-shadow: 0 0 .5rem .1rem $color-blue
+  &_pink
+    background-color: $color-carmine-pink
+    &:hover
+      box-shadow: 0 0 .5rem .1rem $color-carmine-pink

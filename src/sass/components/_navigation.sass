@@ -1,0 +1,25 @@
+@use "../abstracts/mixins" as *
+@use "../abstracts/variables" as *
+
+.navigation
+  padding: 4rem 0
+  display: flex
+  justify-content: space-between
+  align-items: center
+  &__logo
+    max-width: 14rem
+  &__list
+    display: flex
+    align-items: center
+    gap: 4rem
+  &__item:last-child
+    margin-left: 10rem
+  &__link
+    display: inline-block
+    @include font(Raleway, 1rem, 700)
+    color: $color-dark
+    line-height: 100%
+    letter-spacing: 14%
+    transition: transform .3s
+    &:hover
+      transform: translateY(-.5rem)

@@ -1,1 +1,14 @@
+@use "../abstracts/mixins" as *
+@use "../abstracts/variables" as *
 
+.highlight
+  color: $color-blue
+.subtitle
+  @include font(Rubik, 1.2rem, 400)
+  line-height: 140%
+  letter-spacing: 8%
+  color: $color-mouse-grey
+.title-1
+  @include font(Rubik, 4.4rem, 700)
+  color: $color-dark
+  line-height: 126%
