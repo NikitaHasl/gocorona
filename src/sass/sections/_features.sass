@@ -1,0 +1,50 @@
+@use "../abstracts/mixins" as *
+@use "../abstracts/variables" as *
+
+.section-features
+  padding: 8rem 0 4rem 0
+  .subtitle
+    max-width: 60rem
+    margin-inline: auto
+  &__wrapper
+    display: grid
+    grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr))
+    justify-items: center
+    padding: 4rem 0
+    position: relative
+  &__links
+    display: flex
+    justify-content: center
+    align-items: center
+    gap: 6rem
+  &__img
+    max-width: 16rem
+  &__decore
+    &_1
+      width: 6.6rem
+      height: 6.6rem
+      border-radius: 1.6rem
+      transform: rotate(-30deg)
+      left: 0
+      bottom: 0
+    &_2
+      width: 9.7rem
+      height: 9.7rem
+      border-radius: 3rem
+      transform: rotate(105deg)
+      left: 26%
+      top: 18%
+    &_3
+      width: 12.8rem
+      height: 12.8rem
+      border-radius: 3rem
+      transform: rotate(-30deg)
+      right: 30%
+      bottom: 0
+    &_4
+      width: 6.6rem
+      height: 6.6rem
+      border-radius: 1.6rem
+      transform: rotate(-30deg)
+      top: 0
+      right: 0
