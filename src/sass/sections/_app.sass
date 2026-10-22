@@ -3,36 +3,71 @@
 
 .section-app
   padding: 8rem 0
-  z-index: 0
+  @include respond(tab-port)
+    padding: 5rem 0
+  @include respond(phone)
+    padding: 2rem 0
+
   &__wrapper
     display: grid
     grid-template-columns: repeat(2, 1fr)
     align-items: center
+    @include respond(phone)
+      grid-template-columns: 1fr
+      gap: 3rem
+
   &__image
-    width: 100%
-    padding: 5rem 0
     position: relative
+    padding: 5rem 0
+    width: 100%
+    @include respond(phone)
+      order: 2
+
   &__img
     max-width: 25rem
     justify-self: center
+
   &__text
     max-width: 38rem
+    @include respond(phone)
+      order: 1
+      max-width: 100%
+      text-align: center
+
   &__decore
+
     &_1
-      width: 14rem
-      height: 14rem
-      border-radius: 3rem
+      width: 12.8rem
+      height: 12.8rem
       top: 0
-      left: 10rem
+      left: 30%
+      border-radius: 3rem
+      transform: translateX(-50%)
+      @include respond(big-phone)
+        left: 20%
+      @include respond(phone)
+        left: 30%
+
     &_2
-      width: 7rem
-      height: 7rem
+      width: 7.6rem
+      height: 7.6rem
+      right: 30%
+      bottom: 30%
       border-radius: 3rem
-      right: 13rem
-      bottom: 12rem
+      transform: translateX(50%)
+      @include respond(big-phone)
+        right: 22%
+      @include respond(phone)
+        right: 30%
+
     &_3
-      width: 7rem
-      height: 7rem
+      width: 7.6rem
+      height: 7.6rem
+      bottom: 9%
+      left: 30%
       border-radius: 3rem
-      bottom: 5rem
-      left: 14rem
+      transform: translateX(-50%)
+      @include respond(big-phone)
+        left: 20%
+      @include respond(phone)
+        left: 30%

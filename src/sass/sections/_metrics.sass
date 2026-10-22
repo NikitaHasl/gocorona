@@ -4,12 +4,18 @@
 .section-metrics
   padding: 5rem 0 11rem 0
   background-color: $color-ghostly-white
+  @include respond(big-phone)
+    padding: 5rem 0
+  @include respond(phone)
+    padding: 4rem 0
+
   &__statistic
     display: flex
     justify-content: center
     padding: 4rem 0
     position: relative
     z-index: 0
+
   &__info
     display: flex
     justify-content: space-between
@@ -18,31 +24,57 @@
     border-radius: 1.6rem
     width: 100%
     max-width: 66rem
+    @include respond(big-phone)
+      padding: 1.5rem 5rem
+    @include respond(phone)
+      flex-direction: column
+      gap: 2rem
+      width: auto
+
     &-column
       text-align: center
+
     &-title
       @include font(Rubik, 3.6rem, 700)
       letter-spacing: 14%
       color: $color-carmine-pink
+
     &-subtitle
       @include font(Rubik, 1.1rem, 700)
       letter-spacing: 37%
       color: $color-dark
       text-transform: uppercase
+
   &__wrapper
     display: grid
     grid-template-columns: repeat(2, 1fr)
     align-items: center
+    @include respond(tab-port)
+      justify-items: center
+    @include respond(big-phone)
+      grid-template-columns: 1fr
+      gap: 5rem
+
   &__text
     max-width: 40rem
+    @include respond(big-phone)
+      text-align: center
+      max-width: 60rem
+
   &__decore
+
     &_1
       width: 6.5rem
       height: 6.5rem
       border-radius: 1.6rem
       left: 17%
       bottom: 7%
-      transform: rotate(-30deg)
+      transform: translateX(-50%) rotate(-30deg)
+      @include respond(big-phone)
+        left: 7%
+      @include respond(phone)
+        left: 25%
+
     &_2
       width: 9.7rem
       height: 9.7rem
@@ -50,6 +82,7 @@
       left: 40%
       top: 0
       transform: rotate(105deg)
+
     &_3
       width: 12.8rem
       height: 12.8rem
@@ -57,3 +90,7 @@
       right: 14%
       bottom: 10%
       transform: rotate(-30deg)
+      @include respond(big-phone)
+        right: 4%
+      @include respond(phone)
+        right: 10%

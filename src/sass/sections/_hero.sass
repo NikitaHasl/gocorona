@@ -2,22 +2,40 @@
 @use "../abstracts/variables" as *
 
 .section-hero
-  background-color: $color-ghostly-white
   padding-bottom: 5rem
+  background-color: $color-ghostly-white
   position: relative
-  z-index: 0
+  @include respond(phone)
+    padding-bottom: 2rem
+
   &__wrapper
     display: grid
     grid-template-columns: repeat(2, 1fr)
     align-items: center
+    @include respond(big-phone)
+      grid-template-columns: 1fr
+      gap: 3rem
+      justify-items: center
+      text-align: center
+
+  &__text
+    @include respond(big-phone)
+      display: flex
+      flex-direction: column
+      align-items: center
+
   &__img
+    width: 100%
     max-width: 55rem
+
   &__background
     position: absolute
-    background-color: $color-carmine-pink
     right: 0
     top: 0
-    width: 25%
+    width: 30%
     height: 100%
     border-radius: 3rem 0 0 3rem
+    background-color: $color-carmine-pink
     z-index: -1
+    @include respond(phone)
+      display: none

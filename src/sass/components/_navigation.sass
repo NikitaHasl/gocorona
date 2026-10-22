@@ -2,24 +2,91 @@
 @use "../abstracts/variables" as *
 
 .navigation
-  padding: 4rem 0
+  position: relative
   display: flex
   justify-content: space-between
   align-items: center
+  padding: 4rem 0
+  z-index: 10
+  @include respond(tab-port)
+    padding-left: 4rem
+
   &__logo
     max-width: 14rem
+    @include respond(tab-port)
+      max-width: 20rem
+
   &__list
     display: flex
     align-items: center
     gap: 4rem
+    @include respond(tab-port)
+      position: fixed
+      flex-direction: column
+      justify-content: center
+      top: 0
+      left: 0
+      width: 100vw
+      height: 100vh
+      background-color: $color-ghostly-white
+      transform: translateY(-100%)
+      opacity: 0
+      visibility: hidden
+      z-index: 4
+      transition: all 0.3s ease
+
   &__item:last-child
     margin-left: 10rem
+    @include respond(tab-port)
+      margin-left: 0
+
   &__link
-    display: inline-block
     @include font(Raleway, 1rem, 700)
     color: $color-dark
     line-height: 100%
     letter-spacing: 14%
+    display: inline-block
     transition: transform .3s
     &:hover
       transform: translateY(-.5rem)
+    @include respond(tab-port)
+      font-size: 2rem
+
+  &__toggle
+    position: fixed
+    opacity: 0
+    pointer-events: none
+    &:checked
+      ~ .navigation__burger
+        span:nth-child(1)
+          transform: translateY(.6rem) rotate(45deg)
+        span:nth-child(2)
+          opacity: 0
+        span:nth-child(3)
+          transform: translateY(-.75rem) rotate(-45deg)
+
+      ~ .navigation__list
+        transform: translateY(0)
+        opacity: 1
+        visibility: visible
+
+  &__burger
+    display: none
+    flex-direction: column
+    width: 2.5rem
+    height: 1.5rem
+    justify-content: space-between
+    cursor: pointer
+    z-index: 5
+    @include respond(tab-port)
+      display: flex
+      position: fixed
+      right: 3rem
+
+    & span
+      display: block
+      width: 100%
+      height: .2rem
+      border-radius: .1rem
+      background-color: $color-blue
+      transition: transform .3s

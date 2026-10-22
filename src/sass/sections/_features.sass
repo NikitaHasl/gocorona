@@ -3,48 +3,77 @@
 
 .section-features
   padding: 8rem 0 4rem 0
+  overflow: hidden
+  @include respond(big-phone)
+    padding: 4rem 0
+
   .subtitle
     max-width: 60rem
     margin-inline: auto
+
   &__wrapper
+    position: relative
     display: grid
-    grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr))
+    grid-template-columns: repeat(auto-fit, minmax(31rem, 1fr))
+    row-gap: 1.5rem
     justify-items: center
     padding: 4rem 0
-    position: relative
+    @include respond(big-phone)
+      padding: 3rem 0
+
   &__links
     display: flex
     justify-content: center
     align-items: center
     gap: 6rem
+
   &__img
     max-width: 16rem
+
   &__decore
+
     &_1
       width: 6.6rem
       height: 6.6rem
-      border-radius: 1.6rem
-      transform: rotate(-30deg)
       left: 0
       bottom: 0
+      border-radius: 1.6rem
+      transform: rotate(-30deg)
+
     &_2
       width: 9.7rem
       height: 9.7rem
+      left: 30%
+      top: 5%
       border-radius: 3rem
-      transform: rotate(105deg)
-      left: 26%
-      top: 18%
+      transform: translateX(-50%) rotate(105deg)
+      @include respond(tab-port)
+        left: 40%
+        top: 4%
+      @include respond(big-phone)
+        left: 45%
+      @include respond(phone)
+        left: 15%
+        top: 25%
+
     &_3
       width: 12.8rem
       height: 12.8rem
-      border-radius: 3rem
-      transform: rotate(-30deg)
       right: 30%
       bottom: 0
+      border-radius: 3rem
+      transform: translateX(-50%) rotate(-30deg)
+      @include respond(big-phone)
+        right: 10%
+        bottom: 20%
+      @include respond(phone)
+        right: 0
+        bottom: 40%
+
     &_4
       width: 6.6rem
       height: 6.6rem
-      border-radius: 1.6rem
-      transform: rotate(-30deg)
       top: 0
       right: 0
+      border-radius: 1.6rem
+      transform: rotate(-30deg)
